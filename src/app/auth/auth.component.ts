@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../shared';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,8 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -30,7 +32,16 @@ export class AuthComponent implements OnInit {
 
   submitForm() {
     this.isSubmitting = true;
-    console.log(this.credentials);
+
+    this.userService.attemptAuth(this.authType, this.credentials)
+      .subscribe(
+        userData => {
+          this.router.navigateByUrl('/')
+        },
+        err => {
+          this.isSubmitting = false;
+        }
+      )
   }
 
 }

@@ -9,7 +9,12 @@ import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
-import { HeaderComponent, FooterComponent } from './shared';
+import {
+  HeaderComponent,
+  FooterComponent,
+  UserService,
+  ApiService
+} from './shared';
 
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
@@ -33,7 +38,10 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     AuthModule,
     HomeModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
