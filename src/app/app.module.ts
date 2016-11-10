@@ -15,6 +15,7 @@ import {
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { SettingsModule } from './settings/settings.module';
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -30,7 +31,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     rootRouting,
     SharedModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    SettingsModule
   ],
   providers: [
     UserService,
