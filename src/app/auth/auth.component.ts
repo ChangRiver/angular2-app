@@ -13,6 +13,7 @@ export class AuthComponent implements OnInit {
   title: string = '';
   credentials: Object = {};
   isSubmitting: boolean = false;
+  errors: Object = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -40,6 +41,7 @@ export class AuthComponent implements OnInit {
         },
         err => {
           this.isSubmitting = false;
+          this.errors = err;
         }
       )
   }

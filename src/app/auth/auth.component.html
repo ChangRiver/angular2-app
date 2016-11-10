@@ -19,6 +19,9 @@
           </a>
         </p>
 
+        <!-- display the errors -->
+        <list-errors [errors]="errors"></list-errors>
+
         <form novalidate (ngSubmit)="submitForm()">
           <fieldset [disabled]="isSubmitting">
 

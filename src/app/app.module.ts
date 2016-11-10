@@ -1,11 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-//// move to shared
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
@@ -13,11 +8,13 @@ import {
   HeaderComponent,
   FooterComponent,
   UserService,
-  ApiService
+  ApiService,
+  JwtService
 } from './shared';
 
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -30,17 +27,15 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule,
     rootRouting,
-    CommonModule,
+    SharedModule,
     AuthModule,
     HomeModule
   ],
   providers: [
     UserService,
-    ApiService
+    ApiService,
+    JwtService
   ],
   bootstrap: [AppComponent]
 })
