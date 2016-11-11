@@ -9,13 +9,15 @@ import {
   FooterComponent,
   UserService,
   ApiService,
-  JwtService
+  JwtService,
+  ProfileService
 } from './shared';
 
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { SettingsModule } from './settings/settings.module';
+import { ProfileModule } from './profile/profile.module';
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -32,12 +34,14 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     SharedModule,
     AuthModule,
     HomeModule,
-    SettingsModule
+    SettingsModule,
+    ProfileModule
   ],
   providers: [
     UserService,
     ApiService,
-    JwtService
+    JwtService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
