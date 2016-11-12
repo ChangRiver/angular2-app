@@ -10,7 +10,8 @@ import {
   UserService,
   ApiService,
   JwtService,
-  ProfileService
+  ProfileService,
+  ArticlesService
 } from './shared';
 
 import { HomeModule } from './home/home.module';
@@ -18,6 +19,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { SettingsModule } from './settings/settings.module';
 import { ProfileModule } from './profile/profile.module';
+import { EditorModule } from './editor/editor.module';
 
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -35,13 +37,15 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     AuthModule,
     HomeModule,
     SettingsModule,
-    ProfileModule
+    ProfileModule,
+    EditorModule,
   ],
   providers: [
     UserService,
     ApiService,
     JwtService,
-    ProfileService
+    ProfileService,
+    ArticlesService
   ],
   bootstrap: [AppComponent]
 })

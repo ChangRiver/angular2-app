@@ -14,11 +14,17 @@
             <i class="ion-gear-a"></i> Edit Profile Settings
           </a>
 
-          <button class="btn btn-sm btn-outline-secondary action-btn">
-            <i class="ion-plus-round"></i>
-            &nbsp;
-            Follow
-          </button>
+          <!--<button class="btn btn-sm btn-outline-secondary action-btn">-->
+            <!--<i class="ion-plus-round"></i>-->
+            <!--&nbsp;-->
+            <!--Follow-->
+          <!--</button>-->
+          <follow-button
+            [profile]="profile"
+            [hidden]="isUser"
+            (onToggle)="onToggleFolllowing($event)"
+          >
+          </follow-button>
         </div>
 
       </div>

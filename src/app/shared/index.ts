@@ -4,3 +4,4 @@
 export * from './layout';
 export * from './service';
 export * from './models';
+export * from './buttons';
