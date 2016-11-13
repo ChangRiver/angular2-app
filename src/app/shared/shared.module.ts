@@ -6,7 +6,13 @@ import { HttpModule } from '@angular/http';
 
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
-import { FollowButtonComponent } from './buttons';
+import { FollowButtonComponent, FavoriteButtonComponent } from './buttons';
+
+import {
+  ArticleMetaComponent,
+  ArticleListComponent,
+  ArticlePreviewComponent
+} from './article-helpers';
 
 @NgModule({
   imports: [
@@ -18,7 +24,11 @@ import { FollowButtonComponent } from './buttons';
   declarations: [
     ListErrorsComponent,
     ShowAuthedDirective,
-    FollowButtonComponent
+    FollowButtonComponent,
+    FavoriteButtonComponent,
+    ArticleMetaComponent,
+    ArticleListComponent,
+    ArticlePreviewComponent
   ],
   exports: [
     CommonModule,
@@ -27,7 +37,11 @@ import { FollowButtonComponent } from './buttons';
     HttpModule,
     ListErrorsComponent,
     ShowAuthedDirective,
-    FollowButtonComponent
+    FollowButtonComponent,
+    FavoriteButtonComponent,
+    ArticleMetaComponent,
+    ArticleListComponent,
+    ArticlePreviewComponent
   ]
 })
 

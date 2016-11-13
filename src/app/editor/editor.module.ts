@@ -10,6 +10,10 @@ import { EditableArticleResolver } from './editable-article.resolver.service';
 const editorRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: 'editor',
+    component: EditorComponent
+  },
+  {
+    path: 'editor/:slug',
     component: EditorComponent,
     resolve: {
       article: EditableArticleResolver
