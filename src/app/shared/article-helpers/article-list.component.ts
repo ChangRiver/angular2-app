@@ -28,11 +28,13 @@ export class ArticleListComponent {
     if(config) {
       this.query = config;
       this.currentPage = 1;
+      this.runQuery();
     }
   }
 
   setPageTo(pageNumber) {
     this.currentPage = pageNumber;
+    this.runQuery();
   }
 
   runQuery() {

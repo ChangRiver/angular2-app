@@ -5,7 +5,7 @@
 
         <list-errors [errors]="errors"></list-errors>
 
-        <form>
+        <form (ngSubmit)="submitForm()">
           <fieldset [disabled]="isSubmitting">
 
             <fieldset class="form-group">
@@ -36,24 +36,21 @@
             <fieldset class="form-group">
               <input class="form-control"
                      type="text"
-                     name="tag_field"
                      placeholder="Enter tags"
+                     name="tag_field"
                      [(ngModel)]="tagField"
-                      />
+                     (keyup)="addTag($event)" />
 
               <div class="tag-list">
-                <span class="tag-default tag-pill">
-                  <i class="ion-close-round"></i>
-                  Example Tag
-                </span>
-                <span class="tag-default tag-pill">
-                  <i class="ion-close-round"></i>
-                  Another Tag
+                <span *ngFor="let tag of article.tagList"
+                      class="tag-default tag-pill">
+                  <i class="ion-close-round" (click)="removeTag(tag)"></i>
+                  {{ tag }}
                 </span>
               </div>
             </fieldset>
 
-            <button class="btn btn-lg pull-xs-right btn-primary" type="button">
+            <button class="btn btn-lg pull-xs-right btn-primary" type="submit">
               Publish Article
             </button>
 

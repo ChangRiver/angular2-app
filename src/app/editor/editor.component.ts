@@ -34,12 +34,15 @@ export class EditorComponent implements OnInit {
       )
   }
 
-  addTag() {
-
+  addTag(event) {
+    if(event.keyCode === 13) {
+      this.article.tagList.push(this.tagField);
+      this.tagField = '';
+    }
   }
 
-  removeTag() {
-
+  removeTag(tagName) {
+    this.article.tagList.filter(item => item !== tagName)
   }
 
 }

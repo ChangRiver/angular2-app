@@ -12,7 +12,9 @@ import {
   JwtService,
   ProfileService,
   ArticlesService,
-  CommentsService
+  CommentsService,
+  TagsService,
+  AuthGuard
 } from './shared';
 
 import { HomeModule } from './home/home.module';
@@ -48,7 +50,9 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     JwtService,
     ProfileService,
     ArticlesService,
-    CommentsService
+    CommentsService,
+    TagsService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
